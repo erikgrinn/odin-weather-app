@@ -4,7 +4,7 @@ const dataDiv = document.querySelector('#data')
 fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/ridgewood?key=86DXP8CF2L7LZV4FNKA8SH9RQ', {mode: 'cors'})
   .then(function(response) {
     if (!response.ok) {
-        throw new Error('Network response was not ok: ${response.status} $response.statusText}')
+        throw new Error(`HTTP error! Status: ${response.status}`);
     }
     // Successful response :)
     return response.json()
