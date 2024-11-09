@@ -1,6 +1,8 @@
 
-const dataDiv = document.querySelector('#data')
+const titleDiv = document.querySelector('#title')
 const imgDiv = document.querySelector('img')
+const descDiv = document.querySelector('#description')
+
 
 
 // URL (required), options (optional)
@@ -13,9 +15,9 @@ fetch('https://www.world-wonders-api.org/v0/wonders/random', {mode: 'cors'})
     return response.json()
   })
   .then(function(data) {
-    console.log(data)
-    dataDiv.textContent = data.name
+    titleDiv.textContent = data.name
     imgDiv.setAttribute('src', data.links.images[0])
+    descDiv.textContent = data.summary
   })
   .catch(function(err) {
     // Error :(
